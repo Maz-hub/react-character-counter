@@ -5,7 +5,7 @@ import MoonIcon from "../assets/images/icon-moon.svg";
 
 const CounterHeader = () => {
   return (
-    <section className="flex justify-between items-center p-4">
+    <section className="flex justify-between items-center pb-4">
       <div>
         {/* Light Theme Logo */}
         <img src={LogoLightTheme} alt="Logo" className="block dark:hidden" />

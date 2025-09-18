@@ -4,7 +4,9 @@ import CounterHeader from "./components/CounterHeader";
 function App() {
   return (
     <>
-      <CounterHeader />
+      <div className="min-h-screen px-4 pt-4 pb-8">
+        <CounterHeader />
+      </div>
     </>
   );
 }
