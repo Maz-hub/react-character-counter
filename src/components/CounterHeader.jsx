@@ -13,6 +13,7 @@ const CounterHeader = () => {
         {/* Dark Theme Logo */}
         <img src={LogoDarkTheme} alt="Logo" className="hidden dark:block" />
       </div>
+      {/* Toggle Button */}
       <div>
         {/* Light Theme */}
         <button
