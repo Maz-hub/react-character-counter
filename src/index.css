@@ -16,6 +16,19 @@
     --color-orange-800: #DA3701;
 
     --font-sans: "DM Sans", sans-serif;
+
+    --bg-image-light: url("./assets/images/bg-light-theme.png");
+    --bg-image-dark: url("./assets/images/bg-dark-theme.png");
+}
+
+body {
+    background-image: var(--bg-image-light);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.dark body {
+    background-image: var(--bg-image-dark);
 }
 
 @font-face {
