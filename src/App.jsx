@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import CounterHeader from "./components/CounterHeader.jsx";
 import TextInputArea from "./components/TextInputArea.jsx";
+import StatCards from "./components/StatCards.jsx";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
           Analyze your text in real-time.
         </h1>
         <TextInputArea />
+        <StatCards />
       </div>
     </>
   );
