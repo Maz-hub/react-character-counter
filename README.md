@@ -1,12 +1,39 @@
-# React + Vite
+# Character Counter App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small React + Tailwind CSS v4 project built to practice responsive design, theme switching (light/dark), and custom design tokens.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
+- **React** (with Vite)  
+- **Tailwind CSS v4**  
+- **Custom tokens** defined in `@theme`  
+- **Typography presets** built as reusable utilities  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🎨 Design System
+All colors, fonts, and background images are defined in `index.css` under `@theme`.  
+Typography is defined as custom utilities, example:
+
+```css
+@utility text-preset-1 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -1px;
+  font-size: 64px;
+}
+
+@utility text-preset-1-mobile {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -1px;
+  font-size: 40px;
+}
+
+## Note on Tailwind v4 and Custom Classes
+In Tailwind v4, responsive prefixes (sm:, md:, etc.) don’t work with classes defined in @layer base.
+
+👉 To make a custom class behave like a real utility (and support responsive prefixes, hover, dark mode, etc.), define it in @utility instead.

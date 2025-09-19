@@ -7,9 +7,9 @@ import StatLetters from "./components/StatLetters.jsx";
 function App() {
   return (
     <>
-      <div className="min-h-screen px-4 pt-4 pb-8">
+      <div className="min-h-screen px-4 md:px-8 pt-4 pb-8 ">
         <CounterHeader />
-        <h1 className="text-preset-1-mobile text-center my-8">
+        <h1 className="text-preset-1-mobile md:text-preset-1 md:max-w-[510px] md:mx-auto text-center my-8">
           Analyze your text in real-time.
         </h1>
         <TextInputArea />
