@@ -5,7 +5,7 @@ import CharCount from "../assets/images/pattern-character-count.svg";
 const StatCards = () => {
   return (
     <>
-      <section className="space-y-4 mt-10">
+      <section className="space-y-4 mt-10 mb-6">
         {/* Total Characters */}
         <div className=" relative rounded-[12px] bg-[var(--color-purple-500)] p-5 overflow-hidden">
           <img

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import CounterHeader from "./components/CounterHeader.jsx";
 import TextInputArea from "./components/TextInputArea.jsx";
 import StatCards from "./components/StatCards.jsx";
+import StatLetters from "./components/StatLetters.jsx";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         </h1>
         <TextInputArea />
         <StatCards />
+        <StatLetters />
       </div>
     </>
   );
