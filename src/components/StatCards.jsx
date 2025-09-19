@@ -13,7 +13,7 @@ const StatCards = () => {
             alt="pattern-character-count"
             className=" absolute -right-13 -top-4"
           />
-          <p className="text-preset-1-mobile mb-2">278</p>
+          <p className="text-preset-1-mobile mb-2">00</p>
           <p className="text-preset-3">Total Characters</p>
         </div>
         {/* Word Count */}
@@ -23,7 +23,7 @@ const StatCards = () => {
             alt="pattern-character-count"
             className=" absolute -right-13 -top-4"
           />
-          <p className="text-preset-1-mobile mb-2">39</p>
+          <p className="text-preset-1-mobile mb-2">00</p>
           <p className="text-preset-3">Word Count</p>
         </div>
         {/* Sentense Count */}
@@ -33,7 +33,7 @@ const StatCards = () => {
             alt="pattern-character-count"
             className=" absolute -right-13 -top-4"
           />
-          <p className="text-preset-1-mobile mb-2">04</p>
+          <p className="text-preset-1-mobile mb-2">00</p>
           <p className="text-preset-3">Sentence Count</p>
         </div>
       </section>

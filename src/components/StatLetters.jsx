@@ -5,7 +5,13 @@ const StatLetters = () => {
         <h2 className="text-preset-2 text-[var(--color-dark-900)]">
           Letter Density
         </h2>
-        <div className="my-5">
+        <div>
+          {/* Empty state message */}
+          <p className="mt-5 text-preset-4 text-[var(--color-dark-600)]">
+            No characters found. Start typing to see letter density.
+          </p>
+        </div>
+        <div className="my-5 hidden">
           {/* Rows */}
           <ul className="space-y-5">
             <li className="flex items-center gap-3">
@@ -23,7 +29,7 @@ const StatLetters = () => {
         </div>
         <div>
           {/* See more */}
-          <button className=" lex items-center text-preset-3">
+          <button className=" lex items-center text-preset-3 hidden">
             See more
             <span className="text-lg ml-2">˅</span>
           </button>
