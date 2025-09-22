@@ -6,7 +6,7 @@ const TextInputArea = () => {
         <div>
           <textarea
             placeholder="Start typing here… (or paste your text)"
-            className="w-full rounded-[12px] border-2 border-[var(--color-light-200)] bg-[var(--color-light-100)] text-preset-3 text-[var(--color-dark-700)] p-3 md:px-5 md:pt-5"
+            className="w-full rounded-[12px] border-2 border-[var(--color-light-200)] bg-[var(--color-light-100)] text-preset-3 text-[var(--color-dark-700)] p-3 md:px-5 md:pt-5 hover:bg-[var(--color-light-200)] cursor-pointer"
             rows="6"
           />
         </div>
@@ -24,7 +24,7 @@ const TextInputArea = () => {
           </label>
 
           {/* Info text */}
-          <p className="md:ml-auto">Approx. reading time: &lt;1 minute</p>
+          <p className="md:ml-auto">Approx. reading time: 0 minute</p>
         </div>
       </section>
     </>
