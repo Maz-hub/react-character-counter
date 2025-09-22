@@ -9,7 +9,7 @@ function App() {
     <>
       <div className="min-h-screen px-4 md:px-8 pt-4 pb-8 max-w-[990px] mx-auto">
         <CounterHeader />
-        <h1 className="text-preset-1-mobile md:text-preset-1 md:max-w-[510px] md:mx-auto text-center my-8 md:my-10">
+        <h1 className="text-preset-1-mobile md:text-preset-1 md:max-w-[510px] md:mx-auto text-center my-8 md:my-10 lg:my-12">
           Analyze your text in real-time.
         </h1>
         <TextInputArea />
