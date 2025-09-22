@@ -12,7 +12,7 @@ const StatCards = () => {
             src={CharCount}
             alt="pattern-character-count"
             aria-hidden="true"
-            className=" absolute -right-13 md:-right-17 -top-4 md:-top-0 z-0"
+            className=" absolute -right-13 md:-right-17 lg:-right-7 -top-4 md:-top-0 z-0"
           />
           <p className="text-preset-1-mobile md:text-preset-1 mb-2 z-10">00</p>
           <p className="text-preset-3 z-10 isolate">Total Characters</p>
@@ -22,7 +22,7 @@ const StatCards = () => {
           <img
             src={WordCount}
             alt="pattern-character-count"
-            className=" absolute -right-13 -top-4 md:-top-0 z-0"
+            className=" absolute -right-13 -top-4 md:-top-0 z-0 lg:-right-7 "
           />
           <p className="text-preset-1-mobile md:text-preset-1 mb-2">00</p>
           <p className="text-preset-3 isolate">Word Count</p>
@@ -32,7 +32,7 @@ const StatCards = () => {
           <img
             src={SentenceCount}
             alt="pattern-character-count"
-            className=" absolute -right-13 -top-4 md:-top-0 z-0"
+            className=" absolute -right-13 -top-4 md:-top-0 z-0 lg:-right-7"
           />
           <p className="text-preset-1-mobile md:text-preset-1 mb-2">00</p>
           <p className="text-preset-3 isolate">Sentence Count</p>
