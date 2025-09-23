@@ -23,7 +23,7 @@ function App() {
 
   function analyze(text) {
     return {
-      charAll: 0,
+      charAll: text.length,
       words: 0,
       sentences: 0,
       letterMap: {},
