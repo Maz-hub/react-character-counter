@@ -19,12 +19,13 @@ function App() {
     const results = analyze(text); // call the function
     setCounts(results); // update the scoreboard state
     console.log(text);
+    console.log("Counts:", results);
   };
 
   function analyze(text) {
     return {
       charAll: text.length,
-      words: 0,
+      words: text.trim().split(/\s+/).filter(Boolean).length,
       sentences: 0,
       letterMap: {},
     };
