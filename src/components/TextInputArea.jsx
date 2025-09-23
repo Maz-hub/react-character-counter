@@ -1,4 +1,4 @@
-const TextInputArea = ({ textRef, onInput }) => {
+const TextInputArea = ({ textRef, onUserTyping }) => {
   return (
     <>
       <section>
@@ -6,7 +6,7 @@ const TextInputArea = ({ textRef, onInput }) => {
         <div>
           <textarea
             ref={textRef}
-            onInput={onInput}
+            onInput={onUserTyping}
             placeholder="Start typing here… (or paste your text)"
             className="w-full rounded-[12px] border-2 border-[var(--color-light-200)] bg-[var(--color-light-100)] text-preset-3 text-[var(--color-dark-700)] p-3 md:px-5 md:pt-5 hover:bg-[var(--color-light-200)] cursor-pointer"
             rows="6"

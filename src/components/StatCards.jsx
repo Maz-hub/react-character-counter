@@ -2,7 +2,7 @@ import WordCount from "../assets/images/pattern-word-count.svg";
 import SentenceCount from "../assets/images/pattern-sentence-count.svg";
 import CharCount from "../assets/images/pattern-character-count.svg";
 
-const StatCards = () => {
+const StatCards = ({ counts }) => {
   return (
     <>
       <section className="space-y-4 mt-10 mb-6 md:space-y-0 md:grid md:grid-cols-3 md:gap-4 lg:mt-12">
@@ -14,7 +14,9 @@ const StatCards = () => {
             aria-hidden="true"
             className=" absolute -right-13 md:-right-17 lg:-right-7 -top-4 md:-top-0 z-0"
           />
-          <p className="text-preset-1-mobile md:text-preset-1 mb-2 z-10">00</p>
+          <p className="text-preset-1-mobile md:text-preset-1 mb-2 z-10">
+            {counts.charAll}
+          </p>
           <p className="text-preset-3 z-10 isolate">Total Characters</p>
         </div>
         {/* Word Count */}
@@ -24,7 +26,9 @@ const StatCards = () => {
             alt="pattern-character-count"
             className=" absolute -right-13 -top-4 md:-top-0 z-0 lg:-right-7 "
           />
-          <p className="text-preset-1-mobile md:text-preset-1 mb-2">00</p>
+          <p className="text-preset-1-mobile md:text-preset-1 mb-2">
+            {counts.words}
+          </p>
           <p className="text-preset-3 isolate">Word Count</p>
         </div>
         {/* Sentense Count */}
@@ -34,7 +38,9 @@ const StatCards = () => {
             alt="pattern-character-count"
             className=" absolute -right-13 -top-4 md:-top-0 z-0 lg:-right-7"
           />
-          <p className="text-preset-1-mobile md:text-preset-1 mb-2">00</p>
+          <p className="text-preset-1-mobile md:text-preset-1 mb-2">
+            {counts.sentences}
+          </p>
           <p className="text-preset-3 isolate">Sentence Count</p>
         </div>
       </section>
