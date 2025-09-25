@@ -20,9 +20,17 @@ function App() {
     setCounts(results); // update the scoreboard state
     console.log(text);
     console.log("Counts:", results);
+    console.log(results.letterMap);
   };
 
   function analyze(text) {
+    const letterMap = {};
+    for (let char of text.toLowerCase()) {
+      if (/[a-z]/.test(char)) {
+        letterMap[char] = (letterMap[char] || 0) + 1;
+      }
+    }
+
     return {
       charAll: text.length,
       words: text
@@ -30,7 +38,7 @@ function App() {
         .split(/\s+/)
         .filter((w) => /\w/.test(w)).length,
       sentences: text.split(/[.!?]+/).filter((s) => s.trim().length > 0).length,
-      letterMap: {},
+      letterMap: letterMap,
     };
   }
 
@@ -43,7 +51,7 @@ function App() {
         </h1>
         <TextInputArea textRef={textRef} onUserTyping={handleInput} />
         <StatCards counts={counts} />
-        <StatLetters />
+        <StatLetters letterMap={counts.letterMap} />
       </div>
     </>
   );
