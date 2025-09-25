@@ -1,5 +1,7 @@
 const StatLetters = ({ letterMap }) => {
   const hasLetters = Object.keys(letterMap).length > 0;
+  const total = Object.values(letterMap).reduce((a, b) => a + b, 0) || 1;
+
   return (
     <>
       <section>
@@ -28,21 +30,12 @@ const StatLetters = ({ letterMap }) => {
                   <div className="relative flex-1 h-3 rounded-full bg-[var(--color-light-200)] overflow-hidden">
                     <div
                       className="absolute left-0 top-0 h-full w-1/2 bg-[var(--color-purple-500)]"
-                      style={{
-                        width: `${
-                          (count /
-                            Object.values(letterMap).reduce(
-                              (a, b) => a + b,
-                              0
-                            )) *
-                          100
-                        }%`,
-                      }}
+                      style={{ width: `${(count / total) * 100}%` }}
                     ></div>
                   </div>
                   {/* Count */}
-                  <span className="text-right text-[var(--color-dark-900)] text-preset-4">
-                    {count}
+                  <span className="text-right text-[var(--color-dark-900)] text-preset-4 shrink-0 tabular-nums">
+                    {count} ({((count / total) * 100).toFixed(2)}%)
                   </span>
                 </li>
               ))}
@@ -51,7 +44,7 @@ const StatLetters = ({ letterMap }) => {
         )}
         <div>
           {/* See more */}
-          <button className="flex items-center text-preset-3 hidden">
+          <button className="flex items-center text-preset-3">
             See more
             <span className="text-lg ml-2">˅</span>
           </button>
