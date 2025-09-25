@@ -25,8 +25,11 @@ function App() {
   function analyze(text) {
     return {
       charAll: text.length,
-      words: text.trim().split(/\s+/).filter(Boolean).length,
-      sentences: 0,
+      words: text
+        .trim()
+        .split(/\s+/)
+        .filter((w) => /\w/.test(w)).length,
+      sentences: text.split(/[.!?]+/).filter((s) => s.trim().length > 0).length,
       letterMap: {},
     };
   }
