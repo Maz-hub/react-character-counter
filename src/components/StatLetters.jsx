@@ -1,6 +1,13 @@
+import { useState } from "react";
+
 const StatLetters = ({ letterMap }) => {
   const hasLetters = Object.keys(letterMap).length > 0;
   const total = Object.values(letterMap).reduce((a, b) => a + b, 0) || 1;
+
+  const [expanded, setExpanded] = useState(false);
+
+  const entries = Object.entries(letterMap).sort((a, b) => b[1] - a[1]);
+  const visible = expanded ? entries : entries.slice(0, 5);
 
   return (
     <>
@@ -20,7 +27,7 @@ const StatLetters = ({ letterMap }) => {
         {hasLetters && (
           <div className="my-5">
             <ul className="space-y-5">
-              {Object.entries(letterMap).map(([letter, count]) => (
+              {visible.map(([letter, count]) => (
                 <li key={letter} className="flex items-center gap-3">
                   {/* Letter */}
                   <span className="w-4 text-preset-4 text-[var(--color-dark-900)]">
@@ -44,9 +51,19 @@ const StatLetters = ({ letterMap }) => {
         )}
         <div>
           {/* See more */}
-          <button className="flex items-center text-preset-3">
-            See more
-            <span className="text-lg ml-2">˅</span>
+          <button
+            className="flex items-center text-preset-3"
+            onClick={() => setExpanded((e) => !e)}
+            aria-expanded={expanded}
+          >
+            {expanded ? "See less" : "See more"}
+            <span
+              className={`text-lg ml-2 transition-transform ${
+                expanded ? "rotate-180" : "rotate-0"
+              }`}
+            >
+              ˅
+            </span>
           </button>
         </div>
       </section>
