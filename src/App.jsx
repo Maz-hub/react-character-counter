@@ -18,10 +18,16 @@ function App() {
   });
 
   const handleInput = () => {
-    const text = textRef.current.value;
+    const text = textRef.current.value || "";
     const results = analyze(text, { excludeSpaces });
     setCounts(results);
   };
+
+  useEffect(() => {
+    if (!textRef.current) return;
+    const text = textRef.current.value || "";
+    setCounts(analyze(text, { excludeSpaces }));
+  }, [excludeSpaces]);
 
   function analyze(text, options = {}) {
     const { excludeSpaces = false } = options;
