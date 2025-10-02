@@ -19,20 +19,26 @@ function App() {
 
   const handleInput = () => {
     const text = textRef.current.value;
-    const results = analyze(text); // call the function
-    setCounts(results); // update the scoreboard state
+    const results = analyze(text, { excludeSpaces });
+    setCounts(results);
   };
 
-  function analyze(text) {
+  function analyze(text, options = {}) {
+    const { excludeSpaces = false } = options;
     const letterMap = {};
+
     for (let char of text.toLowerCase()) {
       if (/[a-z]/.test(char)) {
         letterMap[char] = (letterMap[char] || 0) + 1;
       }
     }
 
+    const charsAll = excludeSpaces
+      ? text.replace(/\s/g, "").length
+      : text.length;
+
     return {
-      charAll: text.length,
+      charAll: charsAll,
       words: text
         .trim()
         .split(/\s+/)

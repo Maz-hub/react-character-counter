@@ -1,5 +1,9 @@
-const TextInputArea = ({ textRef, onUserTyping, excludeSpaces, onToggleSpaces }) => {
-  
+const TextInputArea = ({
+  textRef,
+  onUserTyping,
+  excludeSpaces,
+  onToggleSpaces,
+}) => {
   return (
     <>
       <section>
@@ -17,8 +21,13 @@ const TextInputArea = ({ textRef, onUserTyping, excludeSpaces, onToggleSpaces })
         {/* Options */}
         <div className="mt-4 space-y-3 text-preset-4 md:flex md:space-y-0">
           <label className="flex items-center gap-[10px] md:mr-6">
-            <input type="checkbox" />
-            <span>Exclude Spaces</span>
+            <input
+              id="excludeSpaces"
+              type="checkbox"
+              checked={excludeSpaces}
+              onChange={onToggleSpaces}
+            />
+            <label htmlFor="excludeSpaces">Exclude Spaces</label>
           </label>
 
           <label className="flex items-center gap-[10px]">
