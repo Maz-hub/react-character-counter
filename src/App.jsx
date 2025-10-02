@@ -7,8 +7,12 @@ import StatLetters from "./components/StatLetters.jsx";
 function App() {
   const textRef = useRef(null);
   const [excludeSpaces, setExcludeSpaces] = useState(false);
+  const [limitOn, setLimitOn] = useState(false);
+  const [limitValue, setLimitValue] = useState(300);
 
   const toggleSpaces = () => setExcludeSpaces((prev) => !prev);
+  const onToggleLimit = () => setLimitOn((prev) => !prev);
+  const onChangeLimit = () => setLimitValue(Number(e.target.value));
 
   const [counts, setCounts] = useState({
     charAll: 0,
@@ -66,6 +70,10 @@ function App() {
           onUserTyping={handleInput}
           excludeSpaces={excludeSpaces}
           onToggleSpaces={toggleSpaces}
+          limitOn={limitOn}
+          onToggleLimit={onToggleLimit}
+          limitValue={limitValue}
+          onChangeLimit={onChangeLimit}
         />
         <StatCards counts={counts} />
         <StatLetters letterMap={counts.letterMap} />

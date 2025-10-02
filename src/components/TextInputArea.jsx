@@ -33,6 +33,7 @@ const TextInputArea = ({
           <label className="flex items-center gap-[10px]">
             <input type="checkbox" />
             <span>Set Character Limit</span>
+            <input type="text" />
           </label>
 
           {/* Info text */}
