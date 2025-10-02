@@ -58,6 +58,9 @@ function App() {
     };
   }
 
+  const overLimit = limitOn && counts.charAll > limitValue;
+  const exceededBy = overLimit ? counts.charAll - limitValue : 0;
+
   return (
     <>
       <div className="min-h-screen px-4 md:px-8 pt-4 pb-8 max-w-[990px] mx-auto">
@@ -74,6 +77,8 @@ function App() {
           onToggleLimit={onToggleLimit}
           limitValue={limitValue}
           onChangeLimit={onChangeLimit}
+          overLimit={overLimit}
+          exceededBy={exceededBy}
         />
         <StatCards counts={counts} />
         <StatLetters letterMap={counts.letterMap} />
