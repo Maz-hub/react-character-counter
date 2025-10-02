@@ -3,6 +3,10 @@ const TextInputArea = ({
   onUserTyping,
   excludeSpaces,
   onToggleSpaces,
+  limitOn,
+  onToggleLimit,
+  limitValue,
+  onChangeLimit,
 }) => {
   return (
     <>
@@ -31,9 +35,19 @@ const TextInputArea = ({
           </label>
 
           <label className="flex items-center gap-[10px]">
-            <input type="checkbox" />
+            <input
+              id="charLimit"
+              type="checkbox"
+              checked={limitOn}
+              onChange={onToggleLimit}
+            />
             <span>Set Character Limit</span>
-            <input type="text" />
+            {limitOn && (
+              <input
+                type="number"
+                className="border py-1 w-15 rounded-[6px] text-center appearance-none"
+              />
+            )}
           </label>
 
           {/* Info text */}

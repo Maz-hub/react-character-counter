@@ -1,6 +1,19 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Hide number input spinners in Chrome, Safari, Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide number input spinners in Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
 @theme {
   --color-dark-900: #12131a;
   --color-dark-800: #21222c;
