@@ -1,4 +1,5 @@
-const TextInputArea = ({ textRef, onUserTyping }) => {
+const TextInputArea = ({ textRef, onUserTyping, excludeSpaces, onToggleSpaces }) => {
+  
   return (
     <>
       <section>
