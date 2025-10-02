@@ -1,3 +1,5 @@
+import iconInfo from "../assets/images/icon-info.svg";
+
 const TextInputArea = ({
   textRef,
   onUserTyping,
@@ -7,6 +9,7 @@ const TextInputArea = ({
   onToggleLimit,
   limitValue,
   onChangeLimit,
+  overLimit,
 }) => {
   return (
     <>
@@ -17,9 +20,20 @@ const TextInputArea = ({
             ref={textRef}
             onInput={onUserTyping}
             placeholder="Start typing here… (or paste your text)"
+            aria-invalid={overLimit ? "true" : "false"}
             className="w-full rounded-[12px] border-2 border-[var(--color-light-200)] bg-[var(--color-light-100)] text-preset-3 text-[var(--color-dark-700)] p-3 md:px-5 md:pt-5 hover:bg-[var(--color-light-200)] cursor-pointer"
             rows="6"
           />
+        </div>
+        <div className="flex ">
+          <img
+            src={iconInfo}
+            alt="Icon Info for Character Limit"
+            aria-hidden="true"
+          />
+          <p className="text-preset-4 text-[var(--color-orange-800)] pl-2">
+            Limit reached! Your text exceeds {limitValue} characters.
+          </p>
         </div>
 
         {/* Options */}
