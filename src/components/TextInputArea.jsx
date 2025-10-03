@@ -21,20 +21,33 @@ const TextInputArea = ({
             onInput={onUserTyping}
             placeholder="Start typing here… (or paste your text)"
             aria-invalid={overLimit ? "true" : "false"}
-            className="w-full rounded-[12px] border-2 border-[var(--color-light-200)] bg-[var(--color-light-100)] text-preset-3 text-[var(--color-dark-700)] p-3 md:px-5 md:pt-5 hover:bg-[var(--color-light-200)] cursor-pointer"
+            aria-describedby={overLimit ? "charLimitMsg" : undefined}
+            className={`w-full rounded-[12px] border-2 p-3 md:px-5 md:pt-5 text-preset-3 text-[var(--color-dark-700)] hover:bg-[var(--color-light-200)] cursor-pointer
+    ${
+      overLimit
+        ? "border-[var(--color-orange-700)] bg-[var(--color-light-100)]"
+        : "border-[var(--color-light-200)] bg-[var(--color-light-100)]"
+    }`}
             rows="6"
           />
         </div>
-        <div className="flex ">
-          <img
-            src={iconInfo}
-            alt="Icon Info for Character Limit"
-            aria-hidden="true"
-          />
-          <p className="text-preset-4 text-[var(--color-orange-800)] pl-2">
-            Limit reached! Your text exceeds {limitValue} characters.
-          </p>
-        </div>
+        {overLimit && (
+          <div
+            id="charLimitMsg"
+            className="flex items-start"
+            role="alert"
+            aria-live="polite"
+          >
+            <img
+              src={iconInfo}
+              alt="Icon Info for Character Limit"
+              aria-hidden="true"
+            />
+            <p className="text-preset-4 text-[var(--color-orange-800)] pl-2">
+              Limit reached! Your text exceeds {limitValue} characters.
+            </p>
+          </div>
+        )}
 
         {/* Options */}
         <div className="mt-4 space-y-3 text-preset-4 md:flex md:space-y-0">
@@ -45,7 +58,7 @@ const TextInputArea = ({
               checked={excludeSpaces}
               onChange={onToggleSpaces}
             />
-            <label htmlFor="excludeSpaces">Exclude Spaces</label>
+            <span htmlFor="excludeSpaces">Exclude Spaces</span>
           </label>
 
           <label className="flex items-center gap-[10px]">
@@ -59,7 +72,9 @@ const TextInputArea = ({
             {limitOn && (
               <input
                 type="number"
-                className="border py-1 w-15 rounded-[6px] text-center appearance-none"
+                value={limitValue}
+                onChange={onChangeLimit}
+                className="border py-1 w-15 rounded-[6px] text-center"
               />
             )}
           </label>
