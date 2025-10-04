@@ -61,6 +61,16 @@ function App() {
   const overLimit = limitOn && counts.charAll > limitValue;
   const exceededBy = overLimit ? counts.charAll - limitValue : 0;
 
+  const minutes = counts.words / 200;
+  const wholeMinutes = Math.ceil(minutes);
+  const displayReadingTime =
+    minutes < 1
+      ? "< 1 minute"
+      : `${wholeMinutes} minute${wholeMinutes > 1 ? "s" : ""}`;
+
+  console.log("words:", counts.words);
+  console.log("readingTime:", displayReadingTime);
+
   return (
     <>
       <div className="min-h-screen px-4 md:px-8 pt-4 pb-8 max-w-[990px] mx-auto">
@@ -79,6 +89,7 @@ function App() {
           onChangeLimit={onChangeLimit}
           overLimit={overLimit}
           exceededBy={exceededBy}
+          readingTime={displayReadingTime}
         />
         <StatCards counts={counts} />
         <StatLetters letterMap={counts.letterMap} />

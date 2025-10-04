@@ -10,6 +10,7 @@ const TextInputArea = ({
   limitValue,
   onChangeLimit,
   overLimit,
+  readingTime,
 }) => {
   return (
     <>
@@ -80,7 +81,7 @@ const TextInputArea = ({
           </label>
 
           {/* Info text */}
-          <p className="md:ml-auto">Approx. reading time: 0 minute</p>
+          <p className="md:ml-auto">Approx. reading time: {readingTime}</p>
         </div>
       </section>
     </>
