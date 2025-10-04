@@ -23,11 +23,18 @@ const TextInputArea = ({
             placeholder="Start typing here… (or paste your text)"
             aria-invalid={overLimit ? "true" : "false"}
             aria-describedby={overLimit ? "charLimitMsg" : undefined}
-            className={`w-full rounded-[12px] border-2 p-3 md:px-5 md:pt-5 text-preset-3 text-[var(--color-dark-700)] hover:bg-[var(--color-light-200)] cursor-pointer
+            className={`w-full rounded-[12px] border-2 p-3 md:px-5 md:pt-5 
+    text-preset-3 text-[var(--color-dark-700)] dark:text-[var(--color-light-200)] 
+    dark:border-[var(--color-dark-700)]
+    hover:bg-[var(--color-light-200)] 
+    dark:hover:bg-[var(--color-dark-700)] 
+    dark:hover:border-[var(--color-dark-600)] 
+    dark:active:border-[var(--color-purple-500)] 
+    cursor-pointer
     ${
       overLimit
-        ? "border-[var(--color-orange-700)] bg-[var(--color-light-100)]"
-        : "border-[var(--color-light-200)] bg-[var(--color-light-100)]"
+        ? "border-[var(--color-orange-700)] bg-[var(--color-light-100)] dark:bg-[var(--color-dark-800)]"
+        : "border-[var(--color-light-200)] bg-[var(--color-light-100)] dark:bg-[var(--color-dark-800)]"
     }`}
             rows="6"
           />
