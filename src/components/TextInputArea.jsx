@@ -33,7 +33,7 @@ const TextInputArea = ({
     cursor-pointer
     ${
       overLimit
-        ? "border-[var(--color-orange-700)] bg-[var(--color-light-100)] dark:bg-[var(--color-dark-800)]"
+        ? "border-[var(--color-orange-700)] dark:border-[var(--color-orange-700)] bg-[var(--color-light-100)] dark:bg-[var(--color-dark-800)]"
         : "border-[var(--color-light-200)] bg-[var(--color-light-100)] dark:bg-[var(--color-dark-800)]"
     }`}
             rows="6"
@@ -58,7 +58,7 @@ const TextInputArea = ({
         )}
 
         {/* Options */}
-        <div className="mt-4 space-y-3 text-preset-4 md:flex md:space-y-0">
+        <div className="mt-4 space-y-3 text-preset-4 md:flex md:space-y-0 dark:text-[var(--color-light-200)]">
           <label className="flex items-center gap-[10px] md:mr-6">
             <input
               id="excludeSpaces"
@@ -82,7 +82,7 @@ const TextInputArea = ({
                 type="text"
                 value={limitValue}
                 onChange={onChangeLimit}
-                className="border py-1 w-15 rounded-[6px] text-center"
+                className="border py-1 w-15 rounded-[6px] text-center dark:border-[var(--color-dark-600)]"
               />
             )}
           </label>
