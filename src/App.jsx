@@ -8,11 +8,11 @@ function App() {
   const textRef = useRef(null);
   const [excludeSpaces, setExcludeSpaces] = useState(false);
   const [limitOn, setLimitOn] = useState(false);
-  const [limitValue, setLimitValue] = useState(300);
+  const [limitValue, setLimitValue] = useState("300");
 
   const toggleSpaces = () => setExcludeSpaces((prev) => !prev);
   const onToggleLimit = () => setLimitOn((prev) => !prev);
-  const onChangeLimit = () => setLimitValue(Number(e.target.value));
+  const onChangeLimit = (e) => setLimitValue(e.target.value);
 
   const [counts, setCounts] = useState({
     charAll: 0,

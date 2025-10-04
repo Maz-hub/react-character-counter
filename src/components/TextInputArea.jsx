@@ -71,7 +71,7 @@ const TextInputArea = ({
             <span>Set Character Limit</span>
             {limitOn && (
               <input
-                type="number"
+                type="text"
                 value={limitValue}
                 onChange={onChangeLimit}
                 className="border py-1 w-15 rounded-[6px] text-center"
