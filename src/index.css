@@ -13,7 +13,6 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-
 @theme {
   --color-dark-900: #12131a;
   --color-dark-800: #21222c;
@@ -33,6 +32,8 @@ input[type="number"] {
   --bg-image-light: url("./assets/images/bg-light-theme.png");
   --bg-image-dark: url("./assets/images/bg-dark-theme.png");
 }
+
+
 
 body {
   background-image: var(--bg-image-light);
