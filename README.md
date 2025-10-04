@@ -53,12 +53,15 @@ Typography presets (like `text-preset-1`, `text-preset-3`) were built as custom 
 
 ## 📁 Folder Structure
 
-src/
-├── components/
-│ ├── CounterHeader.jsx
-│ ├── TextInputArea.jsx
-│ ├── StatCards.jsx
-│ └── StatLetters.jsx
-├── assets/
-│ └── images/
-└── App.jsx
+- **src/**
+  - assets/
+    - fonts/
+    - images/
+  - components/
+    - CounterHeader.jsx 
+    - StatCards.jsx 
+    - StatLetters.jsx 
+    - TextInputArea.jsx   
+  - App.jsx
+  - index.css
+
