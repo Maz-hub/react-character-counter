@@ -6,6 +6,13 @@ import StatLetters from "./components/StatLetters.jsx";
 
 function App() {
   const [isDark, setIsDark] = useState(false);
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setIsDark(true);
+    }
+  }, []);
+
   const toggleTheme = () => setIsDark((prev) => !prev);
 
   useEffect(() => {
