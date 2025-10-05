@@ -3,7 +3,7 @@ import LogoDarkTheme from "../assets/images/logo-dark-theme.svg";
 import SunIcon from "../assets/images/icon-sun.svg";
 import MoonIcon from "../assets/images/icon-moon.svg";
 
-const CounterHeader = () => {
+const CounterHeader = ({ onToggleTheme }) => {
   return (
     <section className="flex justify-between items-center pb-4">
       <div>
@@ -19,6 +19,7 @@ const CounterHeader = () => {
         <button
           aria-label="Switch to dark mode"
           className="block dark:hidden bg-[var(--color-light-100)] p-[6px] md:p-[11px] rounded-md cursor-pointer"
+          onClick={onToggleTheme}
         >
           <img
             src={MoonIcon}
@@ -32,6 +33,7 @@ const CounterHeader = () => {
         <button
           aria-label="Switch to light mode"
           className=" hidden dark:block bg-[var(--color-dark-700)] p-[6px] md:p-[11px] rounded-md cursor-pointer"
+          onClick={onToggleTheme}
         >
           <img
             src={SunIcon}

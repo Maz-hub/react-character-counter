@@ -5,6 +5,14 @@ import StatCards from "./components/StatCards.jsx";
 import StatLetters from "./components/StatLetters.jsx";
 
 function App() {
+  const [isDark, setIsDark] = useState(false);
+  const toggleTheme = () => setIsDark((prev) => !prev);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", isDark);
+    localStorage.setItem("theme", isDark ? "dark" : "light");
+  }, [isDark]);
+
   const textRef = useRef(null);
   const [excludeSpaces, setExcludeSpaces] = useState(false);
   const [limitOn, setLimitOn] = useState(false);
@@ -74,7 +82,7 @@ function App() {
   return (
     <>
       <div className="min-h-screen px-4 md:px-8 pt-4 pb-8 max-w-[990px] mx-auto">
-        <CounterHeader />
+        <CounterHeader onToggleTheme={toggleTheme} />
         <h1 className="text-preset-1-mobile md:text-preset-1 md:max-w-[510px] md:mx-auto text-center my-8 md:my-10 lg:my-12 dark:text-[var(--color-light-100)]">
           Analyze your text in real-time.
         </h1>
