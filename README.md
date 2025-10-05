@@ -1,67 +1,72 @@
 # Character Counter App
 
-A responsive **React + Tailwind CSS v4** mini project built as part of my learning journey.  
-It analyzes text in real time: counting characters, words, and sentences and includes extra features like _Exclude Spaces_, _Set Character Limit_, and _Reading Time_ estimation.
+A responsive **React + Tailwind CSS v4** mini project.
+The app analyzes text in real time - counting characters, words, and sentences — and includes optional tools like _Exclude Spaces_, _Set Character Limit_, and _Reading Time_ estimation.
 
-This was a **Frontend Mentor** challenge I used to practice React logic, state flow, and controlled vs uncontrolled components.
+This project is based on a **Frontend Mentor** challenge and was used to practice React fundamentals such as state flow, DOM interaction, and real-time logic updates.
 
 ---
 
-## 🎯 What it does
+## 🎯 What It Does
 
-- Users can type or paste text into the textarea and see live stats.
-- The app displays:
+- Users can type or paste text into the textarea to see live statistics.
+- Displays:
   - Total characters, words, and sentences
   - Letter frequency (Letter Density)
   - Approximate reading time
-- Optional features:
-  - **Exclude Spaces:** toggles space counting
-  - **Character Limit:** lets users set a limit and warns when it’s exceeded
+- Optional settings:
+  - **Exclude Spaces:** toggles whether spaces are included in the count  
+  - **Character Limit:** lets users define a limit and warns when exceeded
+  - **Light / Dark Mode Toggle:** saves the user’s theme preference in `localStorage` and applies it automatically
 
 ---
 
 ## 🔧 Tech Used
 
 - **React (Vite setup)**
-- **Tailwind CSS v4** for styling and design tokens
-- **Custom @theme** for colors, spacing, and typography
-- **Frontend Mentor** Figma layout as reference
+- **Tailwind CSS v4** for layout, dark mode, and utility-based design
+- **Custom `@theme` and `@utility`** for colors, tokens, and typography
+- **Frontend Mentor** Figma layout for visual reference
 
 ---
 
 ## 💡 Key Takeaways
 
-- Practiced **`useRef`** for an uncontrolled textarea and direct DOM access.
-- Used **`useState`** to manage multiple app states (text stats, toggles, inputs).
-- Applied **`useEffect`** to recalculate counts when options changed.
-- Learned how to build real-time text analysis logic using:
-  - `.split()`, `.filter()`, `.replace()`, `.match()`
-  - Regular expressions for words, sentences, and letters.
-- Improved understanding of **conditional rendering** (`&&`) and dynamic styles in JSX.
-- Built UI logic that reacts instantly to user actions without extra buttons.
+- Practiced **`useRef`** to handle an uncontrolled textarea and direct DOM access.
+- Used **`useState`** to manage app states such as character count, toggles, and limits.
+- Applied **`useEffect`** to trigger automatic recalculations and save theme preferences.
+- Built reusable components that communicate through **props**.
+- Used **conditional rendering** (`&&`) and **dynamic Tailwind classes** for live UI feedback.
+- Implemented **Light / Dark mode** logic that toggles via a button and persists after refresh.
 
 ---
 
 ## 🛠️ Design System
 
-Tailwind tokens and utilities are defined under `@theme` in `index.css`.  
-Typography presets (like `text-preset-1`, `text-preset-3`) were built as custom utilities to stay consistent across screen sizes.
+All design tokens and utilities are defined under `@theme` in `index.css`.  
+Typography presets (like `text-preset-1` and `text-preset-3`) are created using the new Tailwind v4 `@utility` directive for full variant support (`hover:`, `dark:`, etc.).
 
-> 💡 In Tailwind v4, custom utilities should be defined in `@utility` instead of `@layer base` — this allows responsive, hover, and dark mode variants to work correctly.
+> In Tailwind CSS v4, custom text utilities must be defined inside `@utility` instead of `@layer base` to make responsive and state variants work correctly.
+
 
 ---
 
-## 📁 Folder Structure
+## 🌙 Theme Toggle Overview
 
-- **src/**
-  - assets/
-    - fonts/
-    - images/
-  - components/
-    - CounterHeader.jsx 
-    - StatCards.jsx 
-    - StatLetters.jsx 
-    - TextInputArea.jsx   
-  - App.jsx
-  - index.css
+The app uses a simple **`isDark` state** managed in `App.jsx`:
+- The theme class (`.dark`) is toggled on the `<html>` element.
+- The current theme is stored in `localStorage` so the user’s preference is remembered.
+- The header buttons visually switch between sun and moon icons depending on the theme.
+
+---
+
+## ✅ Project Purpose
+
+This project was built to strengthen:
+- React state management and component composition
+- Understanding of Tailwind CSS v4 theming and variants
+- Creating accessible, responsive UI components
+- Writing maintainable, well-documented frontend code
+
+
 
