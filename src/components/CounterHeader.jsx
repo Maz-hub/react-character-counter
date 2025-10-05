@@ -29,11 +29,16 @@ const CounterHeader = () => {
         </button>
 
         {/* Dark Theme */}
-        <img
-          src={SunIcon}
-          alt="Switch to light mode"
-          className="hidden dark:block"
-        />
+        <button
+          aria-label="Switch to light mode"
+          className="block bg-[var(--color-dark-700)] p-[6px] md:p-[11px] rounded-md cursor-pointer"
+        >
+          <img
+            src={SunIcon}
+            alt="Switch to light mode"
+            className=" h-5 w-5 md:h-[22px] md:w-[22px] hidden dark:block"
+          />
+        </button>
       </div>
     </section>
   );
