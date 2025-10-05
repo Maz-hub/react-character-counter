@@ -1,19 +1,50 @@
+/* ------------------------------------------------------------
+   🌿 Tailwind CSS v4 Setup
+   ------------------------------------------------------------
+   Tailwind v4 only requires one import. The framework now 
+   automatically handles base, components, and utilities layers.
+------------------------------------------------------------ */
 @import "tailwindcss";
+
+/* ------------------------------------------------------------
+   🌙 Custom dark mode variant
+   ------------------------------------------------------------
+   Defines a custom "dark" variant that activates when the 
+   `.dark` class is present on the <html> element or any of 
+   its children. Enables the use of classes like `dark:bg-...`
+------------------------------------------------------------ */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Hide number input spinners in Chrome, Safari, Edge */
+/* ------------------------------------------------------------
+   🔢 Remove number input spinners
+   ------------------------------------------------------------
+   Removes the default spinner arrows on number inputs for 
+   a cleaner look across all browsers.
+------------------------------------------------------------ */
+
+/* Chrome, Safari, Edge */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* Hide number input spinners in Firefox */
+/* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
 }
 
+/* ------------------------------------------------------------
+   🎨 Theme tokens (Tailwind v4 @theme)
+   ------------------------------------------------------------
+   Defines reusable design tokens such as colors, fonts, and 
+   background images. These tokens can be used directly in 
+   class names like:
+      bg-[var(--color-dark-800)]
+      text-[var(--color-light-100)]
+------------------------------------------------------------ */
 @theme {
+  /* Colors */
   --color-dark-900: #12131a;
   --color-dark-800: #21222c;
   --color-dark-700: #2a2b37;
@@ -27,14 +58,20 @@ input[type="number"] {
   --color-orange-500: #fe8159;
   --color-orange-800: #da3701;
 
+  /* Typography */
   --font-sans: "DM Sans", sans-serif;
 
+  /* Background images for both themes */
   --bg-image-light: url("./assets/images/bg-light-theme.png");
   --bg-image-dark: url("./assets/images/bg-dark-theme.png");
 }
 
-
-
+/* ------------------------------------------------------------
+   🖼️ Background images for light and dark themes
+   ------------------------------------------------------------
+   The body background switches automatically based on 
+   whether the `.dark` class is active on the <html> element.
+------------------------------------------------------------ */
 body {
   background-image: var(--bg-image-light);
   background-repeat: no-repeat;
@@ -45,6 +82,12 @@ body {
   background-image: var(--bg-image-dark);
 }
 
+/* ------------------------------------------------------------
+   🔠 Font imports
+   ------------------------------------------------------------
+   Self-hosted DM Sans family with three available weights.
+   Used across all text presets for consistent typography.
+------------------------------------------------------------ */
 @font-face {
   font-family: "DM Sans";
   src: url("./assets/fonts/DMSans-Regular.ttf") format("truetype");
@@ -66,6 +109,16 @@ body {
   font-style: normal;
 }
 
+/* ------------------------------------------------------------
+   ✏️ Text presets (Tailwind v4 @utility)
+   ------------------------------------------------------------
+   Tailwind v4 introduces `@utility`, which creates actual 
+   utility classes usable in JSX like:
+      className="text-preset-1"
+   
+   Each preset defines a typography scale used throughout 
+   the application for visual consistency.
+------------------------------------------------------------ */
 @utility text-preset-1 {
   font-family: var(--font-sans);
   font-weight: 700;
