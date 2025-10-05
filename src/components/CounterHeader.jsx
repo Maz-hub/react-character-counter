@@ -31,7 +31,7 @@ const CounterHeader = () => {
         {/* Dark Theme */}
         <button
           aria-label="Switch to light mode"
-          className="block bg-[var(--color-dark-700)] p-[6px] md:p-[11px] rounded-md cursor-pointer"
+          className=" hidden dark:block bg-[var(--color-dark-700)] p-[6px] md:p-[11px] rounded-md cursor-pointer"
         >
           <img
             src={SunIcon}
